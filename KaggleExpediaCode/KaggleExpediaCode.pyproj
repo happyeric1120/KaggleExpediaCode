@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>a1053112-e384-4c97-8734-0a1a6632a80a</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>D:\Projects\Other Projects\KaggleExpediaCode\KaggleExpediaCode\useMongoDB\randomSort.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>KaggleExpediaCode</Name>
+    <RootNamespace>KaggleExpediaCode</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="useMongoDB\learn.py" />
+    <Compile Include="useMongoDB\randomSort.py" />
+    <Compile Include="useMongoDB\setNullStringToNull.py" />
+    <Compile Include="useSQLServer\KaggleExpediaCode.py" />
+    <Compile Include="useSQLServer\searchid.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="useMongoDB\" />
+    <Folder Include="useSQLServer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
