@@ -14,20 +14,18 @@ def runRandomSort():
     with open('D:/Course Material(note in Google Drive)/IS2725/term_project/basicPythonBenchmark/randomBenchmark.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',')
         writer.writerow(['SearchId', 'PropertyId'])
-    
+        
         for benchRow in collection.find():
-            searchId = benchRow['SearchId']
-            propertyId = benchRow['PropertyId']
+  
+            searchId = benchRow['srch_id']
+            propertyId = benchRow['prop_id']
 
             if(searchId != currentSearchId):
-                if(not currentSearchId): 
-                    currentSearchId = searchId
-                    continue
-
+                
                 writeUserSort(currentSearchId, propertyIds, writer)
-
+                
                 currentSearchId = searchId
-                propertyIds = []
+                propertyIds = [currentSearchId]
             else:
                 propertyIds.append(propertyId)
 
@@ -35,6 +33,8 @@ def runRandomSort():
 
 
 def writeUserSort(currentSearchId, propertyIds, csvwriter):
+
+    if(currentSearchId == None): return
 
     #shuffle array and write to csv file
     random.shuffle(propertyIds)
